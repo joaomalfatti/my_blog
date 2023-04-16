@@ -13,7 +13,7 @@ class Post(models.Model):
     author = models.ForeignKey(User,on_delete=models.CASCADE, related_name='blog_posts') #Com usuário deletado, a autoria também será
     created_on = models.DateField(auto_now_add=True)
     update_on = models.DateField(auto_now=True)
-    content = models.TextField()
+    content = RichTextUploadingField()
     status = models.IntegerField(choices=STATUS, default=0)
 
     class meta:
